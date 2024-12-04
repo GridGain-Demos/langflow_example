@@ -1,0 +1,144 @@
+{
+    "products": [
+        {
+            "id": "1",
+            "product": "Organic Bananas",
+            "current_availability": "In Stock",
+            "price": 2.49,
+            "delivery_time": "30-45 minutes"
+        },
+        {
+            "id": "2", 
+            "product": "Fresh Whole Milk",
+            "current_availability": "In Stock",
+            "price": 3.99,
+            "delivery_time": "15-30 minutes"
+        },
+        {
+            "id": "3",
+            "product": "Organic Free-Range Eggs",
+            "current_availability": "Low Stock",
+            "price": 4.29,
+            "delivery_time": "25-40 minutes"
+        },
+        {
+            "id": "4",
+            "product": "Greek Yogurt",
+            "current_availability": "In Stock",
+            "price": 3.79,
+            "delivery_time": "20-35 minutes"
+        },
+        {
+            "id": "5",
+            "product": "Multigrain Bread",
+            "current_availability": "In Stock",
+            "price": 3.49,
+            "delivery_time": "30-45 minutes"
+        },
+        {
+            "id": "6",
+            "product": "Chicken Breast",
+            "current_availability": "In Stock",
+            "price": 6.99,
+            "delivery_time": "40-55 minutes"
+        },
+        {
+            "id": "7",
+            "product": "Fresh Salmon Fillet",
+            "current_availability": "Limited Stock",
+            "price": 12.99,
+            "delivery_time": "45-60 minutes"
+        },
+        {
+            "id": "8",
+            "product": "Organic Spinach",
+            "current_availability": "In Stock",
+            "price": 2.99,
+            "delivery_time": "20-35 minutes"
+        },
+        {
+            "id": "9",
+            "product": "Cherry Tomatoes",
+            "current_availability": "In Stock",
+            "price": 3.29,
+            "delivery_time": "25-40 minutes"
+        },
+        {
+            "id": "10",
+            "product": "Almond Milk",
+            "current_availability": "In Stock",
+            "price": 4.49,
+            "delivery_time": "30-45 minutes"
+        },
+        {
+            "id": "11",
+            "product": "Extra Virgin Olive Oil",
+            "current_availability": "In Stock",
+            "price": 7.99,
+            "delivery_time": "35-50 minutes"
+        },
+        {
+            "id": "12",
+            "product": "Organic Apples",
+            "current_availability": "In Stock",
+            "price": 4.99,
+            "delivery_time": "25-40 minutes"
+        },
+        {
+            "id": "13",
+            "product": "Ground Beef",
+            "current_availability": "Low Stock",
+            "price": 5.99,
+            "delivery_time": "45-60 minutes"
+        },
+        {
+            "id": "14",
+            "product": "Tofu",
+            "current_availability": "In Stock",
+            "price": 2.79,
+            "delivery_time": "30-45 minutes"
+        },
+        {
+            "id": "15",
+            "product": "Pasta",
+            "current_availability": "In Stock",
+            "price": 1.99,
+            "delivery_time": "20-35 minutes"
+        },
+        {
+            "id": "16",
+            "product": "Coconut Water",
+            "current_availability": "In Stock",
+            "price": 3.49,
+            "delivery_time": "25-40 minutes"
+        },
+        {
+            "id": "17",
+            "product": "Natural Honey",
+            "current_availability": "Limited Stock",
+            "price": 6.29,
+            "delivery_time": "35-50 minutes"
+        },
+        {
+            "id": "18",
+            "product": "Fresh Mozzarella",
+            "current_availability": "In Stock",
+            "price": 4.99,
+            "delivery_time": "30-45 minutes"
+        },
+        {
+            "id": "19",
+            "product": "Quinoa",
+            "current_availability": "In Stock",
+            "price": 5.49,
+            "delivery_time": "25-40 minutes"
+        },
+        {
+            "id": "20",
+            "product": "Plant-Based Burger Patties",
+            "current_availability": "Low Stock",
+            "price": 5.79,
+            "delivery_time": "40-55 minutes"
+        }
+    ]
+}
