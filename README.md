@@ -6,6 +6,12 @@ The **Product Data Emitter** is a Python-based application designed to simulate 
 
 ---
 
+## Documentation
+
+For the up-to-date Langflow integration documentation, visit the [GridGain docs](https://gridgain.com/docs/extensions/vector/langflow#using-early-access-version).
+
+---
+
 ## Features
 
 - **Predefined Product Updates**: Updates the availability, price, and delivery time of predefined products.
@@ -37,7 +43,7 @@ The **Product Data Emitter** is a Python-based application designed to simulate 
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/gridgain-poc/langflow_example.git
+   git clone https://github.com/GridGain-Demos/langflow_example.git
    cd langflow_example
 
    python -m venv .venv
@@ -52,11 +58,11 @@ The **Product Data Emitter** is a Python-based application designed to simulate 
 
 
 ### 2. Langflow Setup
-**Clone the repo:**
-```bash
-git clone https://github.com/gridgain-poc/langflow.git
-cd langflow
-```
+**Get the Early Access Langflow version:**
+
+* Download the latest version from the [GridGain website](https://www.gridgain.com/media/langflow/langflow-1.1.13.gridgain.1.zip).
+* Unpack the downloaded archive.
+
 #### For Windows:
 
 
