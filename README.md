@@ -72,6 +72,17 @@ For the up-to-date Langflow integration documentation, visit the [GridGain docs]
    .venv/Scripts/activate
    ```
 
+2. **Update local env:**
+
+    Create **.local.env** file 
+    ```bash
+    LANGFLOW_DATABASE_URL="sqlite:///./langflow.db"
+    LANGFLOW_AUTO_LOGIN=true
+    LANGFLOW_HOST=127.0.0.1
+    LANGFLOW_PORT=7860
+    LANGFLOW_FRONTEND_PATH="./src/frontend/build"
+    ```
+
 2. **Install Langflow and Dependencies:**
    ```bash
    pip install -e .
@@ -81,6 +92,8 @@ For the up-to-date Langflow integration documentation, visit the [GridGain docs]
    ```
 
 3. **Frontend:**
+
+   Navigate to the frontend directory and install dependencies:
    ```
    cd src/frontend
    npm install
@@ -108,20 +121,11 @@ For the up-to-date Langflow integration documentation, visit the [GridGain docs]
    ```
 
 ### 3. Run Langflow:
-In langflow repo:
 
-Create **.local.env** file 
-```bash
-LANGFLOW_DATABASE_URL="sqlite:///./langflow.db"
-LANGFLOW_AUTO_LOGIN=true
-LANGFLOW_HOST=127.0.0.1
-LANGFLOW_PORT=7860
-LANGFLOW_FRONTEND_PATH="./src/frontend/build"
-```
 Then, Run the following command in terminal:
 
 ```bash
-langflow run --env-file .local.env
+uv run langflow run --env-file .local.env
 ```
 Access the UI at: http://127.0.0.1:7860/all
 
