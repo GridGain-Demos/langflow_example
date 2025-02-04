@@ -74,11 +74,10 @@ For the up-to-date Langflow integration documentation, visit the [GridGain docs]
 
 2. **Install Langflow and Dependencies:**
    ```bash
-   pip install langflow
+   pip install -e .
    cd src/backend/base
    pip install -e .
    cd ../../..
-   pip install -e .
    ```
 
 3. **Frontend:**
