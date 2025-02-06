@@ -31,8 +31,6 @@ For the up-to-date Langflow integration documentation, visit the [GridGain docs]
 - GridGain
 - LangChain
 - OpenAI API Key
-- Node.js (for Langflow)
-- uv (>=0.4) (for Langflow)
 - Required Python packages (install via `requirements.txt`)
 
 ---
@@ -93,7 +91,14 @@ For the up-to-date Langflow integration documentation, visit the [GridGain docs]
 
 3. **Frontend:**
 
-   Navigate to the frontend directory and install dependencies:
+   Install Pre-Requisites:
+
+   - **uv**: This project uses uv (>=0.4), a Python package and project manager from Astral. Install instructions at https://docs.astral.sh/uv/getting-started/installation/.
+
+   - **npm**: The frontend files are built with **Node.js (v22.12 LTS) and npm (v10.9)**. Install instructions at https://nodejs.org/en/download/package-manager.
+
+   Windows (WSL) users: ensure npm is installed within WSL environment; which npm should resolve to a Linux location, not a Windows location.
+
    ```
    cd src/frontend
    npm install

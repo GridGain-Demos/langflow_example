@@ -4,8 +4,8 @@ import os
 import json
 
 from pygridgain import Client
-from langchain_community.storage.ignite import GridGainStore
-from langchain_community.vectorstores.ignite import GridGainVectorStore
+from langchain_gridgain.storage import GridGainStore
+from langchain_gridgain.vectorstores import GridGainVectorStore
 from langchain_openai import OpenAIEmbeddings
 
 
