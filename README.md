@@ -159,17 +159,53 @@ python main.py --use_api_key YOUR_API_KEY --num_products 10 --interval 10 --load
 
 ---
 
-## File Structure
+## Import pre-designed Flow
+
 Import the predesigned flow from the assets folder directly in langflow as follows:
 
- - Step1: Click on the upload button 
+ - Step 1: Click on create a new flow
+   
+   ![NewFlow](assets/images/LANGFLOW-START-FLOW.png)
 
- ![Architecture](assets/images/UPLOAD-BUTTON.png)
- 
+ - Step 2: Create a blank flow
+   
+   ![BlankFlow](assets/images/BLANK-FLOW.png)
 
- - Step2: Select the Gridgain Vector Store RAG json file from the assets folder
+ - Step 3: Go back to my projects
+   
+   ![Architecture](assets/images/MY-PROJECTS.png)
 
- ![Architecture](assets/images/SELECT-VECTOR-RAG.png)
+ - Step 4: Click on the upload button next to folders
+
+    ![Upload](assets/images/UPLOAD-BUTTON.png)
+
+ - Step 5: Select the Gridgain Vector Store RAG json file from the assets folder and import
+   
+   ![Selectfile](assets/images/SELECT-VECTOR-RAG.png)
+
+ - Step 6: Click on the newly Imported Project
+
+   ![ImportedProejct](assets/images/IMPORTED-PROJECT.png)
+
+ - Step 7: Add the OpenAI Key Variable in the OpenAI Embeddings Component
+
+   ![OpenaiApiKey_](assets/images/ADD-OPENAIAPIKEY.png)
+
+ - Step 8: Create a new Variable, and add your key and save
+
+   ![OpenaiKeyVariable](assets/images/OPENAI-KEY-VARIABLE.png)
+
+ - Step 9: Select the key from the dropdown
+
+   ![KeyFromDropdown](assets/images/KEY-FROM-DROPDOWN.png)
+
+ - Step 10: Select the same variable for the OpenAI LLM component just before the Chat Output
+
+   ![LLMOpenaiVariable](assets/images/LLM-OPENAI-VARIABLE.png)
+
+---
+
+## File Structure
 
 ```
 |-- src/
