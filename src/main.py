@@ -101,10 +101,6 @@ def update_product_data(
             predefined_product['current_availability'] = product['current_availability']
             predefined_product['price'] = product['price']
 
-            # Update in key-value store
-            key_value_store.mset([(product['id'], json.dumps(predefined_product))])
-            logger.info(f"Updated product in key-value store: {product['id']}")
-            
             product_content = f"Name: {product['product']}, Price: {product['price']}, Availability: {product['current_availability']}, Delivery Time: {product['delivery_time']}"
             
             metadata = {
@@ -158,7 +154,7 @@ if __name__ == "__main__":
     parser.add_argument("--load_data", default="false", help="Load data or use pre-loaded data")
     parser.add_argument("--json_file", default="data\products.json", help="Path to the JSON file with initial products")
     parser.add_argument("--num_products", type=int, default=20, help="Number of products to emit")
-    parser.add_argument("--interval", type=int, default=5, help="Interval between product emissions in seconds")
+    parser.add_argument("--interval", type=int, default=60, help="Interval between product emissions in seconds")
 
     args = parser.parse_args()
 
