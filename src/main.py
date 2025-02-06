@@ -94,6 +94,8 @@ def update_product_data(
         
         # Check if the product ID is in the predefined list
         if product['id'] in predefined_products:
+            combined_texts = []
+            metadatas = []
             # Update predefined product's availability and price
             predefined_product = predefined_products[product['id']]
             predefined_product['current_availability'] = product['current_availability']
@@ -103,27 +105,17 @@ def update_product_data(
             key_value_store.mset([(product['id'], json.dumps(predefined_product))])
             logger.info(f"Updated product in key-value store: {product['id']}")
             
-            # Prepare document for vector store
-            product_content = (
-                f"Product ID: {product['id']}, "
-                f"Name: {product['product']}, "
-                f"Availability: {predefined_product['current_availability']}, "
-                f"Price: ${predefined_product['price']}, "
-                f"Delivery Time: {product['delivery_time']}"
-            )
+            product_content = f"Name: {product['product']}, Price: {product['price']}, Availability: {product['current_availability']}, Delivery Time: {product['delivery_time']}"
             
-            document = Document(
-                page_content=product_content, 
-                metadata={
-                    'id': product['id'],
-                    'product_name': product['product'],
-                    'price': predefined_product['price']
-                }
-            )
+            metadata = {
+                'id': product['id']
+            }
+
+            combined_texts.append(product_content)
+            metadatas.append(metadata)
             
-            # Add to vector store
-            vector_store.add_documents([document])
-            logger.info(f"Updated product in vector store: {product['id']}")
+            added_titles = vector_store.add_texts(combined_texts, metadatas=metadatas)
+            logger.info(f"Updated product in vector store: {added_titles}")
         
         return product
     except Exception as e:

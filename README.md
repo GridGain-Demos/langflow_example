@@ -160,6 +160,16 @@ python main.py --use_api_key YOUR_API_KEY --num_products 10 --interval 10 --load
 ---
 
 ## File Structure
+Import the predesigned flow from the assets folder directly in langflow as follows:
+
+ - Step1: Click on the upload button 
+
+ ![Architecture](assets/images/UPLOAD-BUTTON.png)
+ 
+
+ - Step2: Select the Gridgain Vector Store RAG json file from the assets folder
+
+ ![Architecture](assets/images/SELECT-VECTOR-RAG.png)
 
 ```
 |-- src/
