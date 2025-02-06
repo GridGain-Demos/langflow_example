@@ -30,7 +30,6 @@ def load_json_data(file_path: str) -> list:
 
 def load_data_to_vector_store(
     products: list,
-    key_value_store: GridGainStore, 
     vector_store: GridGainVectorStore, 
     embeddings: OpenAIEmbeddings
 ):
@@ -38,32 +37,23 @@ def load_data_to_vector_store(
     Emit initial product data to GridGain cache and vector store
     """
     try:
+        combined_texts = []
+        metadatas = []
+
         for product in products:
-            # Store in key-value cache
-            key_value_store.mset([(product['id'], json.dumps(product))])
-            logger.info(f"Added product to key-value store: {product['id']}")
+            product_content = f"Name: {product['product']}, Price: {product['price']}, Availability: {product['current_availability']}, Delivery Time: {product['delivery_time']}"
             
-            # Prepare document for vector store
-            product_content = (
-                f"Product ID: {product['id']}, "
-                f"Name: {product['product']}, "
-                f"Availability: {product['current_availability']}, "
-                f"Price: ${product['price']}, "
-                f"Delivery Time: {product['delivery_time']}"
-            )
+            metadata = {
+                'id': product['id']
+            }
+            print(f"Product content: {product_content}")
+            print(f"Metadata: {metadata}")
             
-            document = Document(
-                page_content=product_content, 
-                metadata={
-                    'id': product['id'],
-                    'product_name': product['product'],
-                    'price': product['price']
-                }
-            )
-            
-            # Add to vector store
-            vector_store.add_documents([document])
-            logger.info(f"Added product to vector store: {product['id']}")
+            combined_texts.append(product_content)
+            metadatas.append(metadata)
+
+        added_titles = vector_store.add_texts(combined_texts, metadatas=metadatas)
+        logger.info(f"GridGain vector store populated with combined review and spec data for {added_titles}")
         
     except Exception as e:
         logger.error(f"Error emitting product data: {e}")
@@ -83,7 +73,6 @@ def data_loader(api_key: str, json_file_path: str):
         embeddings = initialize_embeddings_model(api_key)
         
         # Initialize stores
-        key_value_store = initialize_key_value_store(client)
         vector_store = initialize_vector_store(client, embeddings)
         
         # Load initial products
@@ -91,7 +80,7 @@ def data_loader(api_key: str, json_file_path: str):
         
         # Emit products
         logger.info(f"Starting to load initial products from {json_file_path}")
-        load_data_to_vector_store(products, key_value_store, vector_store, embeddings)
+        load_data_to_vector_store(products, vector_store, embeddings)
         
         logger.info("Initial product data loading complete.")
 

@@ -4,8 +4,8 @@ import os
 import json
 
 from pygridgain import Client
-from langchain_community.storage.ignite import GridGainStore
-from langchain_community.vectorstores.ignite import GridGainVectorStore
+from langchain_gridgain.storage import GridGainStore
+from langchain_gridgain.vectorstores import GridGainVectorStore
 from langchain_openai import OpenAIEmbeddings
 
 
@@ -13,18 +13,16 @@ from langchain_openai import OpenAIEmbeddings
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-def initialize_embeddings_model(api_key: str) -> OpenAIEmbeddings:
-    """
-    Initialize OpenAI embeddings model
-    """
+def initialize_embeddings_model(api_key)-> OpenAIEmbeddings:
     try:
+        # Initialize embeddings model
         os.environ["OPENAI_API_KEY"] = api_key
         embeddings = OpenAIEmbeddings(
             model="text-embedding-3-small"
         )
         return embeddings
     except Exception as e:
-        logger.error(f"Failed to initialize embeddings: {e}")
+        logger.error(f"Failed to initialize Embedding Model: {e}")
         raise
 
 def connect_to_gridgain(host: str, port: int) -> Client:

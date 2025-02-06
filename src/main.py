@@ -94,36 +94,24 @@ def update_product_data(
         
         # Check if the product ID is in the predefined list
         if product['id'] in predefined_products:
+            combined_texts = []
+            metadatas = []
             # Update predefined product's availability and price
             predefined_product = predefined_products[product['id']]
             predefined_product['current_availability'] = product['current_availability']
             predefined_product['price'] = product['price']
 
-            # Update in key-value store
-            key_value_store.mset([(product['id'], json.dumps(predefined_product))])
-            logger.info(f"Updated product in key-value store: {product['id']}")
+            product_content = f"Name: {product['product']}, Price: {product['price']}, Availability: {product['current_availability']}, Delivery Time: {product['delivery_time']}"
             
-            # Prepare document for vector store
-            product_content = (
-                f"Product ID: {product['id']}, "
-                f"Name: {product['product']}, "
-                f"Availability: {predefined_product['current_availability']}, "
-                f"Price: ${predefined_product['price']}, "
-                f"Delivery Time: {product['delivery_time']}"
-            )
+            metadata = {
+                'id': product['id']
+            }
+
+            combined_texts.append(product_content)
+            metadatas.append(metadata)
             
-            document = Document(
-                page_content=product_content, 
-                metadata={
-                    'id': product['id'],
-                    'product_name': product['product'],
-                    'price': predefined_product['price']
-                }
-            )
-            
-            # Add to vector store
-            vector_store.add_documents([document])
-            logger.info(f"Updated product in vector store: {product['id']}")
+            added_titles = vector_store.add_texts(combined_texts, metadatas=metadatas)
+            logger.info(f"Updated product in vector store: {added_titles}")
         
         return product
     except Exception as e:
@@ -166,7 +154,7 @@ if __name__ == "__main__":
     parser.add_argument("--load_data", default="false", help="Load data or use pre-loaded data")
     parser.add_argument("--json_file", default="data\products.json", help="Path to the JSON file with initial products")
     parser.add_argument("--num_products", type=int, default=20, help="Number of products to emit")
-    parser.add_argument("--interval", type=int, default=5, help="Interval between product emissions in seconds")
+    parser.add_argument("--interval", type=int, default=60, help="Interval between product emissions in seconds")
 
     args = parser.parse_args()
 
