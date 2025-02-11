@@ -74,11 +74,15 @@ The following steps are excerpts from the DEVELOPMENT.md file.
 
 1. **Install Pre-Requisites:**
 
-   - **uv**: This project uses uv (>=0.4), a Python package and project manager from Astral. Install instructions at https://docs.astral.sh/uv/getting-started/installation/.
+   - **Operating System:** macOS or Linux; Windows users MUST develop under WSL.
 
-   - **npm**: The frontend files are built with **Node.js (v22.12 LTS) and npm (v10.9)**. Install instructions at https://nodejs.org/en/download/package-manager.
-
-   Windows (WSL) users: ensure npm is installed within WSL environment; which npm should resolve to a Linux location, not a Windows location.
+   - **git:** The project uses the ubiquitous git tool for change control.- make: The project uses make to coordidinate packaging.
+   
+   - **uv:** This project uses uv (>=0.4), a Python package and project manager from Astral. Install instructions at https://docs.astral.sh/uv/getting-started/installation/.
+   
+   - **npm:** The frontend files are built with Node.js (v22.12 LTS) and npm (v10.9). Install instructions at https://nodejs.org/en/download/package-manager.
+   
+      - Windows (WSL) users: ensure npm is installed within WSL environment; which npm should resolve to a Linux location, not a Windows location.
 
 2. **Initialize and Run Langflow**:
 
@@ -95,46 +99,18 @@ The following steps are excerpts from the DEVELOPMENT.md file.
    - Initializes the project
    - Starts the application using `uv run langflow run`
 
-
-#### For Windows without WSL setup
-
-1. **Prepare Environment**:
-   ```bash
-   python3.11 -m venv .venv
-   .venv/Scripts/activate
    ```
-
-2. **Update local env:**
-
-    Create **.local.env** file 
-    ```bash
-    LANGFLOW_DATABASE_URL="sqlite:///./langflow.db"
-    LANGFLOW_AUTO_LOGIN=true
-    LANGFLOW_HOST=127.0.0.1
-    LANGFLOW_PORT=7860
-    LANGFLOW_FRONTEND_PATH="./src/frontend/build"
-    ```
-
-2. **Install Langflow and Dependencies:**
-   ```bash
-   pip install -e .
-   cd src/backend/base
-   pip install -e .
-   cd ../../..
-   ```
-
-3. **Frontend:**
-
-   ```
-   cd src/frontend
-   npm install
-   npm run build
-   ```
-
-   In the ***Langflow Early Access Repository***, run the following command in terminal:
-
-   ```bash
-   uv run langflow run --env-file .local.env
+   ╭───────────────────────────────────────────────────────────────────╮
+   │ Welcome to ⛓ Langflow                                            │ 
+   │                                                                   │
+   │                                                                   │
+   │ Collaborate, and contribute at our GitHub Repo 🌟                 │
+   │                                                                   │
+   │ We collect anonymous usage data to improve Langflow.              │
+   │ You can opt-out by setting DO_NOT_TRACK=true in your environment. │
+   │                                                                   │
+   │ Access http://127.0.0.1:7860                                      │
+   ╰───────────────────────────────────────────────────────────────────╯
    ```
 
 ---
