@@ -87,7 +87,6 @@ The following steps are excerpts from the DEVELOPMENT.md file.
 2. **Initialize and Run Langflow**:
 
    This runs perfectly for macOS and Linux, but for windows you will need WSL setup.
-   If WSL is not installed or setup, you can try the steps in the next section.
 
    ```bash
    make init
