@@ -152,7 +152,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Product Data Emitter")
     parser.add_argument("--use_api_key", help="The API key to be used")
     parser.add_argument("--load_data", default="false", help="Load data or use pre-loaded data")
-    parser.add_argument("--json_file", default="data\products.json", help="Path to the JSON file with initial products")
+    parser.add_argument("--json_file", default="data/products.json", help="Path to the JSON file with initial products")
     parser.add_argument("--num_products", type=int, default=20, help="Number of products to emit")
     parser.add_argument("--interval", type=int, default=60, help="Interval between product emissions in seconds")
 
