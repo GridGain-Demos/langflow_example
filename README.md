@@ -64,7 +64,7 @@ For the up-to-date Langflow integration documentation, visit the [GridGain docs]
 ### 2. Langflow Early Access Repository Setup
 **Get the Early Access Langflow version:**
 
-* Download the latest version from the [GridGain website](https://www.gridgain.com/media/langflow/langflow-1.1.13.gridgain.1.zip).
+* Download the latest version from the [GridGain website](https://www.gridgain.com/media/langflow/langflow-1.1.13.gridgain.2.zip).
 * Unpack the downloaded archive.
 
 For details on setting up your local environment:
@@ -87,7 +87,6 @@ The following steps are excerpts from the DEVELOPMENT.md file.
 2. **Initialize and Run Langflow**:
 
    This runs perfectly for macOS and Linux, but for windows you will need WSL setup.
-   If WSL is not installed or setup, you can try the steps in the next section.
 
    ```bash
    make init
