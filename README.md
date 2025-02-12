@@ -125,6 +125,7 @@ In the **Langflow Example** project, run the following command:
 cd src
 python main.py --use_api_key <YOUR_API_KEY> --num_products <NUMBER> --interval <INTERVAL_IN_SECONDS> [--load_data <true|false>] [--json_file <PATH_TO_JSON_FILE>]
 ```
+ - [GridGain Enterprise must be running locally](#software-and-libraries)
 
 ### Arguments
 - `--use_api_key`: (Required) OpenAI API key for embedding initialization.
@@ -175,6 +176,8 @@ Once langflow is up and running, import the predesigned flow from the assets fol
    ![Architecture](assets/images/LANGFLOW-UI.png)
 
  - Step 8: Add the OpenAI Key Variable in the OpenAI Embeddings Component
+ 
+   [You can generate Your OPENAI Key here](#software-and-libraries)
 
    ![OpenaiApiKey_](assets/images/ADD-OPENAIAPIKEY.png)
 
