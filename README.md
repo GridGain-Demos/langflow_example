@@ -83,7 +83,7 @@ The following steps are excerpts from the DEVELOPMENT.md file.
    - **npm:** The frontend files are built with Node.js (v22.12 LTS) and npm (v10.9). Install instructions at https://nodejs.org/en/download/package-manager.
    
       - Windows (WSL) users: ensure npm is installed within WSL environment; which npm should resolve to a Linux location, not a Windows location.
-      - WSL users: ensure to use system IP as host for Gridgain connection in Langflow UI
+      - WSL users: ensure to use system IP as host for GridGain connection in Langflow UI
 
 2. **Initialize and Run Langflow**:
 
