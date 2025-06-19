@@ -64,7 +64,7 @@ For the up-to-date Langflow integration documentation, visit the [GridGain docs]
 ### 2. Langflow Early Access Repository Setup
 **Get the Early Access Langflow version:**
 
-* Download the latest version from the [GridGain website](https://www.gridgain.com/media/langflow/langflow-1.4.2.gridgain.zip).
+* Download the latest version from the [GridGain website](https://www.gridgain.com/media/langflow/langflow-1.4.3.gridgain.zip).
 * Unpack the downloaded archive.
 
 For details on setting up your local environment:
